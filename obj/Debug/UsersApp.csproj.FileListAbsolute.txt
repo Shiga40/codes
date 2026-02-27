@@ -1,0 +1,14 @@
+D:\дурка\UsersApp\UsersApp\bin\Debug\UsersApp.exe.config
+D:\дурка\UsersApp\UsersApp\bin\Debug\UsersApp.exe
+D:\дурка\UsersApp\UsersApp\bin\Debug\UsersApp.pdb
+D:\дурка\UsersApp\UsersApp\obj\Debug\UsersApp.csproj.AssemblyReference.cache
+D:\дурка\UsersApp\UsersApp\obj\Debug\MainWindow.baml
+D:\дурка\UsersApp\UsersApp\obj\Debug\MainWindow.g.cs
+D:\дурка\UsersApp\UsersApp\obj\Debug\App.g.cs
+D:\дурка\UsersApp\UsersApp\obj\Debug\UsersApp_MarkupCompile.cache
+D:\дурка\UsersApp\UsersApp\obj\Debug\UsersApp.g.resources
+D:\дурка\UsersApp\UsersApp\obj\Debug\UsersApp.Properties.Resources.resources
+D:\дурка\UsersApp\UsersApp\obj\Debug\UsersApp.csproj.GenerateResource.cache
+D:\дурка\UsersApp\UsersApp\obj\Debug\UsersApp.csproj.CoreCompileInputs.cache
+D:\дурка\UsersApp\UsersApp\obj\Debug\UsersApp.exe
+D:\дурка\UsersApp\UsersApp\obj\Debug\UsersApp.pdb
