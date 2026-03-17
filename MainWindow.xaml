@@ -1,0 +1,20 @@
+﻿<Window x:Class="SineCosinePlot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sin and Cos" Height="520" Width="820"
+        Background="White">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="График sin(x) и cos(x)" FontSize="18" FontWeight="SemiBold" />
+
+        <Canvas x:Name="PlotCanvas" Grid.Row="1" 
+                Background="White" 
+                MouseWheel="PlotCanvas_MouseWheel">
+        </Canvas>
+    </Grid>
+</Window>
