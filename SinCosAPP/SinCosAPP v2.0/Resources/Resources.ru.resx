@@ -144,4 +144,22 @@
   <data name="German" xml:space="preserve">
     <value>Немецкий</value>
   </data>
+  <data name="SettingsHeader" xml:space="preserve">
+    <value>Настройки сигнала</value>
+  </data>
+  <data name="RangeX" xml:space="preserve">
+    <value>Диапазон X (от - до):</value>
+  </data>
+  <data name="AmplitudeY" xml:space="preserve">
+    <value>Амплитуда Y (от - до):</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Кол-во отсчётов:</value>
+  </data>
+  <data name="BtnApply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="BtnClear" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
 </root>

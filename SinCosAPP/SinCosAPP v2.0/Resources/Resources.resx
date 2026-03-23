@@ -144,4 +144,22 @@
   <data name="German" xml:space="preserve">
     <value>German</value>
   </data>
+  <data name="SettingsHeader" xml:space="preserve">
+    <value>Signal Settings</value>
+  </data>
+  <data name="RangeX" xml:space="preserve">
+    <value>X Range (from - to):</value>
+  </data>
+  <data name="AmplitudeY" xml:space="preserve">
+    <value>Y Amplitude (from - to):</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Points Count:</value>
+  </data>
+  <data name="BtnApply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="BtnClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
 </root>

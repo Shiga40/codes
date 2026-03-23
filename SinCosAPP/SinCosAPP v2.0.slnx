@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="SignalGenerator.Server/SignalGenerator.Server.csproj" Id="a3312508-26e2-4f00-9419-fa02d4bcd346" />
   <Project Path="SinCosAPP v2.0/SinCosAPP v2.0.csproj" />
 </Solution>

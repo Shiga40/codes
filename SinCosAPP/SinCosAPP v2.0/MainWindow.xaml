@@ -3,19 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ScottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
         xmlns:lex="http://wpflocalizeextension.codeplex.com"
-        
-        
-        
+        xmlns:local="clr-namespace:SinCosAPP_v2._0" 
         lex:ResxLocalizationProvider.DefaultAssembly="SinCosAPP_v2.0"
         lex:ResxLocalizationProvider.DefaultDictionary="Resources"
         Title="Sin/Cos"
-       
         Height="450" Width="800">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="Auto" MinWidth="180"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -41,6 +38,8 @@
             </ComboBox>
         </StackPanel>
 
-        <ScottPlot:WpfPlot x:Name="WpfPlot1" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <local:SignalSettingsControl x:Name="SettingsControl" Grid.Row="1" Grid.Column="0" Margin="5"/>
+
+        <ScottPlot:WpfPlot x:Name="WpfPlot1" Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Window>

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+// Это пространство имен будет в C#
+option csharp_namespace = "SignalGenerator.Server";
+
+package signal;
+
+service SignalGenerator {
+  // Двусторонний поток: клиент шлет настройки, сервер шлет точки
+  rpc StreamSignal (stream SignalRequest) returns (stream SignalPoint);
+}
+
+message SignalRequest {
+  double min_x = 1;
+  double max_x = 2;
+  double min_y = 3;
+  double max_y = 4;
+  int32 count = 5;
+}
+
+message SignalPoint {
+  double x = 1;
+  double y = 2;
+}

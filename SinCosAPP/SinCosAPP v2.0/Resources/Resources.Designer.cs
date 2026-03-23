@@ -61,6 +61,15 @@ namespace SinCosAPP_v2._0.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Y Amplitude (from - to):.
+        /// </summary>
+        public static string AmplitudeY {
+            get {
+                return ResourceManager.GetString("AmplitudeY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Sin and Cos Plotter.
         /// </summary>
         public static string AppTitle {
@@ -70,11 +79,38 @@ namespace SinCosAPP_v2._0.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Apply.
+        /// </summary>
+        public static string BtnApply {
+            get {
+                return ResourceManager.GetString("BtnApply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Clear.
+        /// </summary>
+        public static string BtnClear {
+            get {
+                return ResourceManager.GetString("BtnClear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Cosine.
         /// </summary>
         public static string Cosine {
             get {
                 return ResourceManager.GetString("Cosine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Points Count:.
+        /// </summary>
+        public static string Count {
+            get {
+                return ResourceManager.GetString("Count", resourceCulture);
             }
         }
         
@@ -124,11 +160,29 @@ namespace SinCosAPP_v2._0.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на X Range (from - to):.
+        /// </summary>
+        public static string RangeX {
+            get {
+                return ResourceManager.GetString("RangeX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Russian .
         /// </summary>
         public static string Russian {
             get {
                 return ResourceManager.GetString("Russian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Signal Settings.
+        /// </summary>
+        public static string SettingsHeader {
+            get {
+                return ResourceManager.GetString("SettingsHeader", resourceCulture);
             }
         }
         

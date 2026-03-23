@@ -144,4 +144,22 @@
   <data name="German" xml:space="preserve">
     <value>Deutsch</value>
   </data>
+  <data name="SettingsHeader" xml:space="preserve">
+    <value>Signal-Einstellungen</value>
+  </data>
+  <data name="RangeX" xml:space="preserve">
+    <value>X-Bereich (von - bis):</value>
+  </data>
+  <data name="AmplitudeY" xml:space="preserve">
+    <value>Y-Amplitude (von - bis):</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Anzahl der Punkte:</value>
+  </data>
+  <data name="BtnApply" xml:space="preserve">
+    <value>Anwenden</value>
+  </data>
+  <data name="BtnClear" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
 </root>
