@@ -25,7 +25,7 @@ namespace SinCosAPP_v2._0
         private CancellationTokenSource _cts = new CancellationTokenSource();
         public MainWindow()
         {
-            
+            AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
             // Инициализация компонентов WPF
             InitializeComponent();
 
@@ -69,7 +69,7 @@ namespace SinCosAPP_v2._0
         private void SetupGrpc()
         {
             // Адрес должен совпадать с адресом запущенного сервера 
-            var channel = GrpcChannel.ForAddress("https://localhost:7014");
+            var channel = GrpcChannel.ForAddress("http://localhost:5035");
             _grpcClient = new SignalGenerator.Server.SignalGenerator.SignalGeneratorClient(channel);
         }
 
