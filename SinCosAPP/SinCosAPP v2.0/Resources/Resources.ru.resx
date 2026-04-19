@@ -160,6 +160,24 @@
     <value>Применить</value>
   </data>
   <data name="BtnClear" xml:space="preserve">
-    <value>Очистить</value>
+    <value>Отмена</value>
+  </data>
+  <data name="Error_Unavailable" xml:space="preserve">
+    <value>Сервер недоступен. Проверьте SignalGenerator.Server.</value>
+  </data>
+  <data name="Error_Deadline" xml:space="preserve">
+    <value>Превышено время ожидания ответа.</value>
+  </data>
+  <data name="Error_InvalidX" xml:space="preserve">
+    <value>Неверный диапазон X или количество точек.</value>
+  </data>
+  <data name="Error_RpcGeneric" xml:space="preserve">
+    <value>Ошибка gRPC: {0}</value>
+  </data>
+  <data name="Error_InvalidY" xml:space="preserve">
+    <value>Максимум Y должен быть больше минимума Y.</value>
+  </data>
+  <data name="Error_InvalidArgs" xml:space="preserve">
+    <value>неверно введены значения</value>
   </data>
 </root>

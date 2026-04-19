@@ -1,52 +1,75 @@
 ﻿using Grpc.Core;
-using SignalGenerator.Server; // Этот namespace должен совпадать с тем, что в .proto
+using SignalGenerator.Server; 
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace SignalGenerator.Server.Services;
-
-public class SignalGeneratorService : SignalGenerator.SignalGeneratorBase
+namespace SignalGenerator.Server.Services
 {
-    private readonly ILogger<SignalGeneratorService> _logger;
-
-    public SignalGeneratorService(ILogger<SignalGeneratorService> logger)
+    public class SignalService : SignalGenerator.SignalGeneratorBase
     {
-        _logger = logger;
-    }
-
-    public override async Task StreamSignal(
-        IAsyncStreamReader<SignalRequest> requestStream,
-        IServerStreamWriter<SignalPoint> responseStream,
-        ServerCallContext context)
-    {
-        var rng = new Random();
-
-        try
+        public override async Task StreamSignal(
+       IAsyncStreamReader<SignalRequest> requestStream,
+       IServerStreamWriter<SignalPoint> responseStream,
+       ServerCallContext context)
         {
-            // Ждем первый и последующие запросы настроек от WPF
-            await foreach (var request in requestStream.ReadAllAsync())
+            // валидация X
+            if (!await requestStream.MoveNext()) return;
+            var settings = requestStream.Current;
+
+            if (settings.Count <= 0 || settings.MaxX <= settings.MinX)
             {
-                _logger.LogInformation($"Генерация: {request.Count} точек в диапазоне X[{request.MinX}:{request.MaxX}]");
+                throw new RpcException(new Status(StatusCode.InvalidArgument, "ERR_INVALID_X_RANGE"));
+            }
 
-                for (int i = 0; i < request.Count; i++)
+            // Фоновая задача для обновления настроек "на лету"
+            var readTask = Task.Run(async () =>
+            {
+                try
                 {
-                    // Проверяем, не отключился ли клиент, чтобы не работать вхолостую
-                    if (context.CancellationToken.IsCancellationRequested) break;
-
-                    var point = new SignalPoint
+                    while (await requestStream.MoveNext(context.CancellationToken))
                     {
-                        X = request.MinX + (request.MaxX - request.MinX) * (i / (double)request.Count),
-                        Y = request.MinY + (request.MaxY - request.MinY) * rng.NextDouble()
-                    };
+                        settings = requestStream.Current; // Обновляем параметры без остановки стрима
+                    }
+                }
+                catch (OperationCanceledException) { }
+            });
 
-                    await responseStream.WriteAsync(point);
+            // Бесконечная генерация данных (Xn < Xn+1)
+            double currentX = settings.MinX;
+            try
+            {
+                while (!context.CancellationToken.IsCancellationRequested)
+                {
+                    double step = (settings.MaxX - settings.MinX) / settings.Count;
 
-                    // Небольшая пауза, чтобы график "оживал" постепенно
-                    await Task.Delay(5, context.CancellationToken);
+                   
+                    // Находим центр (смещение по вертикали) и радиус (амплитуду)
+                    double amplitude = (settings.MaxY - settings.MinY) / 2.0;
+                    double offsetY = (settings.MaxY + settings.MinY) / 2.0;
+
+                    await responseStream.WriteAsync(new SignalPoint
+                    {
+                        X = currentX,
+                        // Масштабируем синус: (значение * амплитуда) + смещение
+                        Y = offsetY + (Math.Sin(currentX) * amplitude)
+                    });
+
+                    currentX += step;
+
+                    if (currentX > settings.MaxX)
+                    {
+                        currentX = settings.MinX;
+                    }
+
                 }
             }
-        }
-        catch (OperationCanceledException)
-        {
-            _logger.LogWarning("Стрим был отменен клиентом.");
+
+
+            finally
+            {
+                await readTask;
+            }
         }
     }
 }

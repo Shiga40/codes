@@ -160,6 +160,24 @@
     <value>Apply</value>
   </data>
   <data name="BtnClear" xml:space="preserve">
-    <value>Clear</value>
+    <value>Cancel</value>
+  </data>
+  <data name="Error_Unavailable" xml:space="preserve">
+    <value>Server unavailable. Check SignalGenerator.Server.</value>
+  </data>
+  <data name="Error_Deadline" xml:space="preserve">
+    <value>Server response timeout.</value>
+  </data>
+  <data name="Error_InvalidX" xml:space="preserve">
+    <value>Invalid X range or number of points.</value>
+  </data>
+  <data name="Error_RpcGeneric" xml:space="preserve">
+    <value>gRPC Error: {0}</value>
+  </data>
+  <data name="Error_InvalidY" xml:space="preserve">
+    <value>Maximum Y must be greater than minimum Y.</value>
+  </data>
+  <data name="Error_InvalidArgs" xml:space="preserve">
+    <value>values ​​entered incorrectly</value>
   </data>
 </root>

@@ -1,12 +1,9 @@
 syntax = "proto3";
-
-// Это пространство имен будет в C#
 option csharp_namespace = "SignalGenerator.Server";
 
-package signal;
-
 service SignalGenerator {
-  // Двусторонний поток: клиент шлет настройки, сервер шлет точки
+  // Клиент открывает один поток и шлет в него настройки (SignalRequest), 
+  // а сервер в этот же поток шлет точки (SignalPoint)
   rpc StreamSignal (stream SignalRequest) returns (stream SignalPoint);
 }
 

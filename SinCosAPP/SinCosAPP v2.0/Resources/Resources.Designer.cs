@@ -88,7 +88,7 @@ namespace SinCosAPP_v2._0.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Clear.
+        ///   Ищет локализованную строку, похожую на Cancel.
         /// </summary>
         public static string BtnClear {
             get {
@@ -120,6 +120,60 @@ namespace SinCosAPP_v2._0.Resources {
         public static string English {
             get {
                 return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Server response timeout..
+        /// </summary>
+        public static string Error_Deadline {
+            get {
+                return ResourceManager.GetString("Error_Deadline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на values ​​entered incorrectly.
+        /// </summary>
+        public static string Error_InvalidArgs {
+            get {
+                return ResourceManager.GetString("Error_InvalidArgs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Invalid X range or number of points..
+        /// </summary>
+        public static string Error_InvalidX {
+            get {
+                return ResourceManager.GetString("Error_InvalidX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Maximum Y must be greater than minimum Y..
+        /// </summary>
+        public static string Error_InvalidY {
+            get {
+                return ResourceManager.GetString("Error_InvalidY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на gRPC Error: {0}.
+        /// </summary>
+        public static string Error_RpcGeneric {
+            get {
+                return ResourceManager.GetString("Error_RpcGeneric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Server unavailable. Check SignalGenerator.Server..
+        /// </summary>
+        public static string Error_Unavailable {
+            get {
+                return ResourceManager.GetString("Error_Unavailable", resourceCulture);
             }
         }
         

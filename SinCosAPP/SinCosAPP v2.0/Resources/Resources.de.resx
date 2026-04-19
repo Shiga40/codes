@@ -160,6 +160,24 @@
     <value>Anwenden</value>
   </data>
   <data name="BtnClear" xml:space="preserve">
-    <value>Löschen</value>
+    <value>Stornieren</value>
+  </data>
+  <data name="Error_Unavailable" xml:space="preserve">
+    <value>Server nicht verfügbar. Prüfen Sie SignalGenerator.Server.</value>
+  </data>
+  <data name="Error_Deadline" xml:space="preserve">
+    <value>Zeitüberschreitung der Serverantwort.</value>
+  </data>
+  <data name="Error_InvalidX" xml:space="preserve">
+    <value>Ungültiger X-Bereich oder Punktanzahl.</value>
+  </data>
+  <data name="Error_RpcGeneric" xml:space="preserve">
+    <value>gRPC-Fehler: {0}</value>
+  </data>
+  <data name="Error_InvalidY" xml:space="preserve">
+    <value>Max Y muss größer als Min Y sein.</value>
+  </data>
+  <data name="Error_InvalidArgs" xml:space="preserve">
+    <value>falsch eingegebene Werte</value>
   </data>
 </root>
